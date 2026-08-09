@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Guard - Cyber Security Academy ม.3</title>
+    <title>Smart Guard - Cyber Security Academy</title>
 
     <link href="https://db.onlinewebfonts.com/c/bb5de19d87c09a95216dc6ccd96e37c6?family=Nimbus+Sans+TW01" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -134,96 +134,33 @@
         const { useState } = React; /* Icons */ function Logo({ className = "text-current w-5 h-5 sm:w-6 sm:h-6" }) { return (
         <svg viewBox="0 0 256 256" fill="currentColor" className={className}>
                     <path d="M 144 256 L 27.598 256 L 144 139.598 Z M 256 207.5 L 200 256 L 200 56 L 0 56 L 48 0 L 256 0 Z M 0 204.402 L 0 112 L 92.402 112 Z" />
-                </svg> ); } function ArrowUp({ className = "w-4 h-4" }) { return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-                    <path d="m5 12 7-7 7 7"/><path d="M12 19V5"/>
-                </svg> ); } function Sparkles({ className = "w-4 h-4" }) { return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-                    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-                    <path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>
-                </svg> ); } function ChevronDown({ className = "w-3.5 h-3.5" }) { return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-                    <path d="m6 9 6 6 6-6"/>
-                </svg> ); } function MenuIcon({ className = "w-5 h-5" }) { return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-                    <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
-                </svg> ); } function XIcon({ className = "w-5 h-5" }) { return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-                    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
                 </svg> ); } /* Background Configuration */ const bgStyle = { backgroundImage: "url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260611_133301_d5f2a94a-b22e-4e4a-a6b6-eacdddf1f5b0.png&w=1280&q=85')"
-        }; const grassImage = "https://res.cloudinary.com/dy5er7kv5/image/upload/q_auto/f_auto/v1781191264/grass_eam204.png"; /* ================= Page 1: Home ================= */ function HomePage({ onStart }) { const [isMobileMenuOpen, setIsMobileMenuOpen]
-        = useState(false); return (
+        }; /* ================= Page 1: Home (Minimalist Design) ================= */ function HomePage({ onStart }) { return (
         <div className="relative min-h-[100svh] overflow-hidden bg-cover bg-center flex flex-col font-brand" style={bgStyle}>
-            {/* Grass Overlay */}
-            <img src={grassImage} alt="Grass" className="pointer-events-none absolute bottom-0 left-0 z-10 w-full select-none object-cover h-32 md:h-auto" />
 
-            <nav className="animate-fade-down relative z-20 px-5 sm:px-8 lg:px-10 py-4 sm:py-5 flex justify-between items-center w-full">
-                <div className="flex items-center gap-2 text-gray-900 font-bold text-lg sm:text-xl">
+            {/* Top Navbar: Just Logo */}
+            <nav className="animate-fade-down relative z-20 px-5 sm:px-8 lg:px-10 py-6 flex items-center w-full">
+                <div className="flex items-center gap-2 text-gray-900 font-bold text-xl sm:text-2xl">
                     <Logo />
                     <span>SmartGuard</span>
                 </div>
-
-                <div className="hidden md:flex items-center gap-8">
-                    <button className="flex items-center gap-1 text-[13px] text-gray-700 hover:text-gray-900 font-medium cursor-pointer">
-                                บทเรียน <ChevronDown />
-                            </button>
-                    <button className="text-[13px] text-gray-700 hover:text-gray-900 font-medium cursor-pointer">ภารกิจ</button>
-                    <button className="text-[13px] text-gray-700 hover:text-gray-900 font-medium cursor-pointer">เกียรติบัตร</button>
-                </div>
-
-                <div className="hidden md:flex items-center">
-                    <button onClick={onStart} className="bg-gray-900 text-white text-[13px] font-medium px-4 sm:px-5 py-2 rounded-full hover:bg-gray-800 transition-colors cursor-pointer">
-                                เข้าสู่บทเรียน
-                            </button>
-                </div>
-
-                <button onClick={()=> setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden w-9 h-9 rounded-full text-gray-900 hover:bg-gray-900/10 flex items-center justify-center transition-colors cursor-pointer">
-                            {isMobileMenuOpen ? <XIcon /> : <MenuIcon />}
-                        </button> {isMobileMenuOpen && (
-                <div className="absolute left-4 right-4 top-full mt-2 rounded-2xl bg-white/80 backdrop-blur-xl ring-1 ring-gray-200 px-5 py-3 animate-fade-up z-50 flex flex-col">
-                    <button className="text-left text-[15px] text-gray-700 hover:text-gray-900 border-b border-gray-200 py-3 font-medium cursor-pointer">บทเรียน</button>
-                    <button className="text-left text-[15px] text-gray-700 hover:text-gray-900 border-b border-gray-200 py-3 font-medium cursor-pointer">ภารกิจ</button>
-                    <button className="text-left text-[15px] text-gray-700 hover:text-gray-900 py-3 font-medium cursor-pointer">เกียรติบัตร</button>
-                    <button onClick={onStart} className="mt-2 bg-gray-900 text-white text-[15px] font-medium py-3 rounded-xl hover:bg-gray-800 transition-colors cursor-pointer">
-                                    เข้าสู่บทเรียน
-                                </button>
-                </div>
-                )}
             </nav>
 
-            <div className="flex-1 min-h-8 sm:min-h-12 lg:min-h-16 shrink-0"></div>
-
-            <main className="relative z-20 flex flex-col items-center text-center px-5 pb-32">
-                <h1 className="text-gray-900 font-normal leading-[1.05] tracking-tight text-[40px] min-[400px]:text-[44px] sm:text-6xl lg:text-7xl xl:text-[80px]">
-                    <div className="animate-fade-up">จับโป๊ะแฮกเกอร์.</div>
-                    <div className="animate-fade-up" style={{ animationDelay: '100ms' }}>ได้แบบง่ายๆ.</div>
+            {/* Main Centered Content */}
+            <main className="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-5 pb-32">
+                <h1 className="animate-fade-up text-gray-900 font-extrabold tracking-tight text-5xl sm:text-7xl lg:text-[80px]">
+                    SMART GUARD
                 </h1>
 
-                <div className="animate-fade-up mt-5 sm:mt-6 w-full max-w-xl" style={{ animationDelay: '220ms' }}>
-                    <div className="flex items-center gap-3 rounded-full bg-white/60 backdrop-blur-md ring-1 ring-gray-200 pl-5 pr-1.5 py-1.5 shadow-sm">
-                        <input type="text" placeholder="รหัสผ่านของคุณเดายากแค่ไหน?" className="flex-1 bg-transparent text-sm sm:text-base text-gray-900 placeholder-gray-500 outline-none py-2 font-thai" />
-                        <button onClick={onStart} className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-900 text-white hover:scale-105 active:scale-95 transition-transform shrink-0 flex items-center justify-center cursor-pointer">
-                                    <ArrowUp className="w-4 h-4 sm:w-[18px] sm:h-[18px]" />
-                                </button>
-                    </div>
-                </div>
-
-                <p className="animate-fade-up mt-4 sm:mt-5 text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md font-thai" style={{ animationDelay: '340ms' }}>
-                    ห้องเรียนออนไลน์ที่จะพาคุณจับโป๊ะข้อความหลอก <br className="hidden sm:block" /> ปกป้องข้อมูลส่วนตัว
-                    <Sparkles className="inline w-4 h-4 -mt-1 text-amber-500" /> และตั้งรหัสผ่านให้ปลอดภัย
+                <p className="animate-fade-up mt-6 text-gray-700 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-thai" style={{ animationDelay: '150ms' }}>
+                    เว็บไซต์เพื่อเสริมสร้างความรู้และทักษะด้านความมั่นคงปลอดภัยไซเบอร์<br className="hidden sm:block" /> เพื่อให้คุณสามารถป้องกันตนเองจากภัยคุกคามและการหลอกลวงบนโลกออนไลน์
                 </p>
 
-                <div className="animate-fade-up mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-3" style={{ animationDelay: '460ms' }}>
-                    <button onClick={onStart} className="bg-gray-900 text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-gray-800 hover:shadow-lg transition-all font-thai cursor-pointer">
-                                เริ่มภารกิจฟรี (Try it free)
-                            </button>
-                    <button onClick={onStart} className="text-gray-700 text-sm font-medium px-6 py-2.5 rounded-full ring-1 ring-gray-300 hover:bg-gray-100 transition-colors font-thai bg-white/50 backdrop-blur-sm cursor-pointer">
-                                ดูสิ่งที่จะได้เรียน
-                            </button>
-                </div>
+                <button onClick={onStart} className="animate-fade-up mt-10 bg-gray-900 text-white text-base sm:text-lg font-bold px-10 py-3.5 rounded-full hover:bg-gray-800 hover:scale-105 hover:shadow-xl transition-all font-thai cursor-pointer" style={{ animationDelay:
+                    '300ms' }}>
+                            เริ่มบทเรียน
+                        </button>
             </main>
-
-            <div className="flex-1 min-h-10 sm:min-h-12 lg:min-h-16 shrink-0"></div>
         </div>
         ); } /* ================= Page 2: Learning ================= */ const stepsData = [ { id: 1, title: "เช็กสกิล", icon: "📋" }, { id: 2, title: "เรียนรู้", icon: "🎬" }, { id: 3, title: "พิชิตด่าน", icon: "🎮" }, { id: 4, title: "ทบทวน", icon: "📊" }, {
         id: 5, title: "รับเกียรติบัตร", icon: "🎓" } ]; function LearningPage({ onBackToHome }) { const [currentStep, setCurrentStep] = useState(1); const [studentName, setStudentName] = useState(""); const [activeGame, setActiveGame] = useState(1); const
@@ -243,8 +180,6 @@
             + 1); } } else { alert( "❌ แฮกเกอร์ป้องกันการโจมตีได้! ลองเลือกคำตอบใหม่อีกครั้งครับ"); } }; const handleStepChange=( stepId)=> { setCurrentStep(stepId); window.scrollTo({ top: 0, behavior: 'smooth' }); }; const passScore = getPassScore(); let passScoreBg = "#EF4444"; if (passScore === 100) { passScoreBg = "#10B981"; } else if (passScore >= 50) { passScoreBg = "#F59E0B";
             } return (
             <div className="relative min-h-[100svh] overflow-hidden bg-cover bg-center flex flex-col pb-16" style={bgStyle}>
-                {/* Add Grass to Learning Page too */}
-                <img src={grassImage} alt="Grass" className="pointer-events-none absolute bottom-0 left-0 z-0 w-full select-none object-cover h-32 md:h-auto opacity-80" />
 
                 <nav className="sticky top-0 z-50 bg-white/60 backdrop-blur-md border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
                     <button onClick={onBackToHome} className="text-gray-700 hover:bg-gray-100 px-3 py-1.5 rounded-lg flex items-center gap-2 text-sm font-medium transition-colors cursor-pointer">
@@ -500,7 +435,7 @@
                     </div>
                 </div>
             </div>
-            ); } /* App Component */ function App() { const [currentPage, setCurrentPage] = useState('home'); return (
+            ); } function App() { const [currentPage, setCurrentPage] = useState('home'); return (
             <div className="min-h-[100svh]">
                 {currentPage === 'home' ? (
                 <HomePage onStart={()=> { setCurrentPage('learning'); window.scrollTo(0, 0); }} /> ) : (
